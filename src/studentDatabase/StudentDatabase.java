@@ -21,6 +21,9 @@ import javax.swing.border.LineBorder;
 
 import com.toedter.calendar.JDateChooser;
 
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
 public class StudentDatabase {
 
 	private JFrame frame;
@@ -120,6 +123,13 @@ public class StudentDatabase {
 		panel1.add(lblNewLabel_3);
 		
 		txtMicroProcessors = new JTextField();
+		txtMicroProcessors.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				StudentRegNumOnly iNum = new StudentRegNumOnly();
+				iNum.numbersOnly(e);
+			}
+		});
 		txtMicroProcessors.setFont(new Font("Arial Narrow", Font.PLAIN, 18));
 		txtMicroProcessors.setColumns(10);
 		txtMicroProcessors.setBounds(637, 48, 201, 36);
@@ -131,6 +141,13 @@ public class StudentDatabase {
 		panel1.add(lblNewLabel_4);
 		
 		txtCommunication = new JTextField();
+		txtCommunication.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				StudentRegNumOnly iNum = new StudentRegNumOnly();
+				iNum.numbersOnly(e);
+			}
+		});
 		txtCommunication.setFont(new Font("Arial Narrow", Font.PLAIN, 18));
 		txtCommunication.setColumns(10);
 		txtCommunication.setBounds(637, 95, 201, 36);
@@ -142,6 +159,13 @@ public class StudentDatabase {
 		panel1.add(lblNewLabel_5);
 		
 		txtDigElectronics = new JTextField();
+		txtDigElectronics.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				StudentRegNumOnly iNum = new StudentRegNumOnly();
+				iNum.numbersOnly(e);
+			}
+		});
 		txtDigElectronics.setFont(new Font("Arial Narrow", Font.PLAIN, 18));
 		txtDigElectronics.setColumns(10);
 		txtDigElectronics.setBounds(637, 142, 201, 36);
@@ -153,6 +177,13 @@ public class StudentDatabase {
 		panel1.add(lblNewLabel_6);
 		
 		txtAutomation = new JTextField();
+		txtAutomation.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				StudentRegNumOnly iNum = new StudentRegNumOnly();
+				iNum.numbersOnly(e);
+			}
+		});
 		txtAutomation.setFont(new Font("Arial Narrow", Font.PLAIN, 18));
 		txtAutomation.setColumns(10);
 		txtAutomation.setBounds(637, 188, 201, 36);
@@ -164,6 +195,13 @@ public class StudentDatabase {
 		panel1.add(lblNewLabel_7);
 		
 		txtSWEngr = new JTextField();
+		txtSWEngr.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				StudentRegNumOnly iNum = new StudentRegNumOnly();
+				iNum.numbersOnly(e);
+			}
+		});
 		txtSWEngr.setFont(new Font("Arial Narrow", Font.PLAIN, 18));
 		txtSWEngr.setColumns(10);
 		txtSWEngr.setBounds(637, 235, 201, 36);
@@ -175,6 +213,13 @@ public class StudentDatabase {
 		panel1.add(lblNewLabel_8);
 		
 		txtControlEngr = new JTextField();
+		txtControlEngr.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				StudentRegNumOnly iNum = new StudentRegNumOnly();
+				iNum.numbersOnly(e);
+			}
+		});
 		txtControlEngr.setFont(new Font("Arial Narrow", Font.PLAIN, 18));
 		txtControlEngr.setColumns(10);
 		txtControlEngr.setBounds(637, 282, 201, 36);
@@ -186,6 +231,13 @@ public class StudentDatabase {
 		panel1.add(lblNewLabel_9);
 		
 		txtNetworkEngr = new JTextField();
+		txtNetworkEngr.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				StudentRegNumOnly iNum = new StudentRegNumOnly();
+				iNum.numbersOnly(e);
+			}
+		});
 		txtNetworkEngr.setFont(new Font("Arial Narrow", Font.PLAIN, 18));
 		txtNetworkEngr.setColumns(10);
 		txtNetworkEngr.setBounds(637, 329, 201, 36);
@@ -209,6 +261,13 @@ public class StudentDatabase {
 		panel1.add(lblNewLabel_11);
 		
 		txtRobotics = new JTextField();
+		txtRobotics.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				StudentRegNumOnly iNum = new StudentRegNumOnly();
+				iNum.numbersOnly(e);
+			}
+		});
 		txtRobotics.setFont(new Font("Arial Narrow", Font.PLAIN, 18));
 		txtRobotics.setColumns(10);
 		txtRobotics.setBounds(637, 376, 201, 36);
@@ -372,6 +431,80 @@ public class StudentDatabase {
 				
 				String GP = String.format("%.2f", R[10]);
 				txtGP.setText(GP);
+				
+				if(R[0] > 100 || R[0] < 0)
+				{
+					txtMicroProcessors.setText("");
+					txtMicroProcessors.requestFocus();
+					txtAverage.setText("");
+					txtTotalScore.setText("");
+					txtRanking.setText("");
+					txtGP.setText("");
+				}
+				if(R[1] > 100 || R[1] < 0)
+				{
+					txtCommunication.setText("");
+					txtCommunication.requestFocus();
+					txtAverage.setText("");
+					txtTotalScore.setText("");
+					txtRanking.setText("");
+					txtGP.setText("");
+				}
+				if(R[2] > 100 || R[2] < 0)
+				{
+					txtDigElectronics.setText("");
+					txtDigElectronics.requestFocus();
+					txtAverage.setText("");
+					txtTotalScore.setText("");					
+					txtRanking.setText("");
+					txtGP.setText("");
+				}
+				if(R[3] > 100 || R[3] < 0)
+				{
+					txtAutomation.setText("");
+					txtAutomation.requestFocus();
+					txtAverage.setText("");
+					txtTotalScore.setText("");
+					txtGP.setText("");
+					txtRanking.setText("");
+				}
+				if(R[4] > 100 || R[4] < 0)
+				{
+					txtSWEngr.setText("");
+					txtSWEngr.requestFocus();
+					txtAverage.setText("");
+					txtTotalScore.setText("");
+					txtGP.setText("");
+					txtRanking.setText("");
+				}
+				if(R[5] > 100 || R[5] < 0)
+				{
+					txtControlEngr.setText("");
+					txtControlEngr.requestFocus();
+					txtAverage.setText("");
+					txtTotalScore.setText("");
+					txtGP.setText("");
+					txtRanking.setText("");
+				}
+				if(R[6] > 100 || R[6] < 0)
+				{
+					txtNetworkEngr.setText("");
+					txtNetworkEngr.requestFocus();
+					txtAverage.setText("");
+					txtTotalScore.setText("");
+					txtGP.setText("");
+					txtRanking.setText("");
+				}
+				if(R[7] > 100 || R[7] < 0)
+				{
+					txtRobotics.setText("");
+					txtRobotics.requestFocus();
+					txtAverage.setText("");
+					txtTotalScore.setText("");
+					txtGP.setText("");
+					txtRanking.setText("");
+				}
+
 			}
 		});
 		btnResult.setFocusable(false);
